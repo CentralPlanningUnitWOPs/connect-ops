@@ -155,11 +155,11 @@ em{font-style:italic}
 .spine,.links{display:grid;gap:0;background:var(--white);border:1px solid var(--line);
   border-radius:12px;overflow:hidden;margin:clamp(14px,1.8vw,20px) 0 0;padding:0;list-style:none}
 .spine{grid-template-columns:repeat(4,minmax(0,1fr))}
-.links{grid-template-columns:repeat(auto-fit,minmax(216px,1fr))}
+.links{grid-template-columns:repeat(3,minmax(0,1fr))}
 .spine li,.links div{padding:1.15rem 1.15rem 1.3rem;
   box-shadow:1px 0 0 var(--line),0 1px 0 var(--line)}
-@media(max-width:979px){.spine{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:599px){.spine{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:979px){.spine,.links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){.spine,.links{grid-template-columns:minmax(0,1fr)}}
 .spine .st{display:block;font-family:var(--display);font-size:.62rem;letter-spacing:.2em;
   color:var(--vivid);margin-bottom:.5rem}
 .spine b,.links b{display:block;font-family:var(--display);font-weight:500;color:var(--ink);
@@ -481,8 +481,6 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
       <div><b>Kinesis</b><span>The safety upload each day, kept as history against each
         driver rather than a loose PDF.</span></div>
       <div><b>Atom</b><span>A stopping report every two hours through the day.</span></div>
-      <div><b>Prime Payments</b><span>Self billing agreements signed before any invoice is
-        raised in a driver's name.</span></div>
       <div><b>Anthropic</b><span>The copilot inside the app, answering against your own
         operation rather than the internet.</span></div>
     </div>
@@ -562,14 +560,21 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
      alive. Scrolling past all four used to leave all four running, which is what
      made the page drag. They mount about a viewport before you reach them and
      are torn down about a viewport after, restoring the poster underneath. */
+  function isVideo(src){return /\.mp4($|\?)/i.test(src);}
+  /* Inline, a demo is a silent preview that plays itself as you reach it.
+     The sound, the controls and the full screen all belong to Maximise. */
   function mediaFor(src,fig){
     var m;
-    if(/\.mp4($|\?)/i.test(src)){m=document.createElement("video");
+    if(isVideo(src)){
+      m=document.createElement("video");
       m.src=src;m.muted=true;m.loop=true;m.autoplay=true;m.playsInline=true;
-      m.setAttribute("playsinline","");}
-    else{m=document.createElement("iframe");m.src=src;
+      m.preload="metadata";
+      m.setAttribute("playsinline","");m.setAttribute("muted","");
+    } else {
+      m=document.createElement("iframe");m.src=src;
       m.allow="autoplay; fullscreen; clipboard-write";
-      m.setAttribute("allowfullscreen","");m.loading="lazy";}
+      m.setAttribute("allowfullscreen","");m.loading="lazy";
+    }
     m.title=(fig.querySelector("h3")||{}).textContent||"Demo";
     return m;
   }
@@ -607,17 +612,34 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
   var askedForFullscreen=false;
 
   function openOverlay(src,title){
-    var box=ovl.querySelector(".box");
-    var f=document.createElement("iframe");
-    f.src=src; f.title=title||"Demo";
-    f.allow="autoplay; fullscreen; clipboard-write";
-    f.setAttribute("allowfullscreen","");
-    box.innerHTML=""; box.appendChild(f);
+    var box=ovl.querySelector(".box"),el;
+    if(isVideo(src)){
+      /* iOS gives true, chrome free full screen to a <video> and to nothing
+         else, so when the source is a file we hand the phone its own player
+         rather than an overlay inside Safari. */
+      el=document.createElement("video");
+      el.src=src; el.controls=true; el.autoplay=true; el.playsInline=true;
+      el.setAttribute("playsinline","");
+      el.preload="auto";
+    } else {
+      el=document.createElement("iframe");
+      el.src=src;
+      el.allow="autoplay; fullscreen; clipboard-write";
+      el.setAttribute("allowfullscreen","");
+    }
+    el.title=title||"Demo";
+    box.innerHTML=""; box.appendChild(el);
     ovl.setAttribute("data-open","");
     document.body.style.overflow="hidden";
     fitBox();
-    var rq=ovl.requestFullscreen||ovl.webkitRequestFullscreen;
     askedForFullscreen=false;
+    if(el.webkitEnterFullscreen){
+      /* iPhone: the native player takes the whole display and rotates with it */
+      var go=function(){try{el.webkitEnterFullscreen();}catch(e){}};
+      if(el.readyState>=1)go(); else el.addEventListener("loadedmetadata",go,{once:true});
+      return;
+    }
+    var rq=ovl.requestFullscreen||ovl.webkitRequestFullscreen;
     if(rq){var r=rq.call(ovl); askedForFullscreen=true;
            if(r&&r.catch)r.catch(function(){askedForFullscreen=false;});}
   }
@@ -628,6 +650,8 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
     }
     askedForFullscreen=false;
     ovl.removeAttribute("data-open");
+    var cur=ovl.querySelector(".box video");
+    if(cur){try{cur.pause();}catch(e){}}
     ovl.querySelector(".box").innerHTML="";   /* stop the player */
     document.body.style.overflow="";
   }
