@@ -1303,12 +1303,11 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <button type="button" class="vpick" aria-pressed="false" data-k="evening" data-v="Just the stand">Just the stand</button>
         </div></div>
     </div>
-    <a class="cta r" id="rsvp" href="mailto:dan@connectyourworkforce.co.uk?subject=Ignite%3A%20see%20you%20in%20DSP%20Land&amp;body=Hi%20Dan%2C%0D%0A%0D%0AI%27d%20like%20to%20see%20Connect%20Ops%20at%20Ignite%20on%2012%20October%2C%20in%20DSP%20Land.%0D%0A%0D%0AABOUT%20US%0D%0AName%3A%20%0D%0ARole%3A%20%0D%0ADSP%20name%3A%20%0D%0AStations%20and%20sites%3A%20%0D%0ARoutes%20a%20day%2C%20roughly%3A%20%0D%0AContracts%20%28Amazon%2C%20and%20any%20others%29%3A%20%0D%0A%0D%0AWHAT%20TO%20SHOW%20ME%0D%0AFirst%3A%20%0D%0AWhat%20we%20run%20on%20today%3A%20%0D%0AThe%20one%20thing%20I%20would%20fix%20first%3A%20%0D%0A%0D%0AON%20THE%20DAY%0D%0AThe%20evening%20after%20Ignite%3A%20%0D%0ABest%20time%20to%20catch%20me%20at%20the%20stand%3A%20%0D%0ABest%20number%20to%20reach%20me%3A%20%0D%0A%0D%0AThanks%2C%0D%0A">
+    <a class="cta r" id="rsvp" href="mailto:dan@connectyourworkforce.co.uk?subject=Ignite%3A%20see%20you%20in%20DSP%20Land&amp;body=Hi%20Dan%2C%0D%0A%0D%0AWe%27d%20like%20to%20come%20and%20see%20you%20at%20Ignite.%0D%0A%0D%0AName%20and%20DSP%3A%20%0D%0AKeen%20to%20see%3A%20%0D%0AThe%20evening%20after%20Ignite%3A%20%0D%0ABest%20way%20to%20reach%20me%3A%20%0D%0A%0D%0AWhat%27s%20on%20your%20mind%3A%20%0D%0A%0D%0AThanks%2C%0D%0A">
       Tell us you are coming
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <p class="fine r">Your email opens with a short form already in it: who you are, your sites,
-      and what you want to see. The more you tell us, the more of the visit we build around
-      you, and somebody will be free the moment you arrive.</p>
+    <p class="fine r">Your email opens with a few lines to start us off. Say as much or as little
+      as you like, and we will pick it up from there.</p>
     <div class="sign r">
       <div><span class="tag">Dan Towler, Connect Ops</span><br>
         <a href="mailto:dan@connectyourworkforce.co.uk">dan@connectyourworkforce.co.uk</a></div>
@@ -1394,12 +1393,9 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
   /* Build your visit: what they pick goes straight into the email they send */
   var rsvp=document.getElementById("rsvp"),plan=document.querySelector("[data-plan]");
   if(rsvp&&plan){
-    var mail=function(show,evening){return ["Hi Dan,","","I'd like to see Connect Ops at Ignite on 12 October, in DSP Land.","",
-      "ABOUT US","Name: ","Role: ","DSP name: ","Stations and sites: ","Routes a day, roughly: ",
-      "Contracts (Amazon, and any others): ","",
-      "WHAT TO SHOW ME","First: "+show,"What we run on today: ","The one thing I would fix first: ","",
-      "ON THE DAY","The evening after Ignite: "+evening,"Best time to catch me at the stand: ",
-      "Best number to reach me: ","","Thanks,",""].join("\r\n");};
+    var mail=function(show,evening){return ["Hi Dan,","","We'd like to come and see you at Ignite.","",
+      "Name and DSP: ","Keen to see: "+show,"The evening after Ignite: "+evening,"Best way to reach me: ","",
+      "What's on your mind: ","","Thanks,",""].join("\r\n");};
     var picked=function(k){return [].slice.call(plan.querySelectorAll('.vpick[data-k="'+k+'"][aria-pressed="true"]'))
       .map(function(b){return b.getAttribute("data-v");});};
     var write=function(){
