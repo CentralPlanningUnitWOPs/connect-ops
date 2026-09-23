@@ -624,13 +624,29 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
   border-top:1px dashed rgba(143,240,194,.34)}
 .ticket .meta span{display:block;font-family:var(--display);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:#7fbfa2}
 .ticket .meta b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(16px,1.7vw,19px);color:#fff;margin-top:.15rem}
-.cta{display:inline-flex;align-items:center;gap:.7rem;margin-top:clamp(28px,3.6vw,40px);
+.cta{display:inline-flex;align-items:center;gap:.7rem;margin-top:clamp(22px,3vw,30px);
   background:var(--vivid);color:var(--night);text-decoration:none;font-weight:800;font-size:17px;letter-spacing:-.01em;
   padding:1rem 1.5rem;border-radius:999px;box-shadow:0 20px 40px -18px rgba(16,192,112,.7);
   transition:transform .25s var(--ease),box-shadow .25s,background .25s}
 .cta:hover{transform:translateY(-2px);background:#35d58a;box-shadow:0 26px 50px -18px rgba(16,192,112,.8)}
 .cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .cta svg{width:18px;height:18px}
+.plan{display:none;gap:22px 34px;margin-top:clamp(28px,3.6vw,40px);padding:22px 24px 24px;
+  border:1px solid rgba(143,240,194,.24);border-radius:18px;background:rgba(255,255,255,.04)}
+.js .plan{display:grid}
+@media(min-width:860px){.plan{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.plan .q>span{display:block;font-family:var(--display);font-weight:500;font-size:.66rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mint);margin-bottom:.75rem}
+.vpicks{display:flex;flex-wrap:wrap;gap:8px}
+.vpick{font:inherit;font-size:14.5px;font-weight:650;letter-spacing:-.01em;color:#dff3e8;background:transparent;
+  border:1px solid rgba(143,240,194,.4);border-radius:999px;padding:.5rem .95rem;min-height:44px;cursor:pointer;
+  transition:background .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.vpick:hover{border-color:var(--vivid)}
+.vpick:active{transform:scale(.97)}
+.vpick[aria-pressed="true"]{background:var(--vivid);border-color:var(--vivid);color:var(--night)}
+.vpick[aria-pressed="true"]::before{content:"";display:inline-block;width:9px;height:5px;margin:0 .45rem .18rem 0;
+  border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg)}
+.vpick:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .fine{margin-top:1.2rem;font-size:15.5px;line-height:1.6;max-width:40rem;color:#bfe8d3}
 .sign{margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.16);
   display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-end}
@@ -1268,11 +1284,31 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <div><span>Details</span><b>To follow</b></div></div>
       </div>
     </div>
-    <a class="cta r" href="mailto:dan@connectyourworkforce.co.uk?subject=Ignite%3A%20see%20you%20in%20DSP%20Land">
+    <!-- Build your visit. Only shown when scripts run, because without them the
+         buttons would do nothing; the email below still carries the full form. -->
+    <div class="plan r" data-plan>
+      <div class="q"><span id="q-show">What should we show you first?</span>
+        <div class="vpicks" role="group" aria-labelledby="q-show">
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="Fleet">Fleet</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="People">People</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="Compliance">Compliance</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="Payments">Payments</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="Performance">Performance</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="show" data-v="All of it, end to end">All of it</button>
+        </div></div>
+      <div class="q"><span id="q-eve">Joining us after Ignite?</span>
+        <div class="vpicks" role="group" aria-labelledby="q-eve" data-one>
+          <button type="button" class="vpick" aria-pressed="false" data-k="evening" data-v="Yes please">Yes please</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="evening" data-v="Maybe">Maybe</button>
+          <button type="button" class="vpick" aria-pressed="false" data-k="evening" data-v="Just the stand">Just the stand</button>
+        </div></div>
+    </div>
+    <a class="cta r" id="rsvp" href="mailto:dan@connectyourworkforce.co.uk?subject=Ignite%3A%20see%20you%20in%20DSP%20Land&amp;body=Hi%20Dan%2C%0D%0A%0D%0AI%27d%20like%20to%20see%20Connect%20Ops%20at%20Ignite%20on%2012%20October%2C%20in%20DSP%20Land.%0D%0A%0D%0AABOUT%20US%0D%0AName%3A%20%0D%0ARole%3A%20%0D%0ADSP%20name%3A%20%0D%0AStations%20and%20sites%3A%20%0D%0ARoutes%20a%20day%2C%20roughly%3A%20%0D%0AContracts%20%28Amazon%2C%20and%20any%20others%29%3A%20%0D%0A%0D%0AWHAT%20TO%20SHOW%20ME%0D%0AFirst%3A%20%0D%0AWhat%20we%20run%20on%20today%3A%20%0D%0AThe%20one%20thing%20I%20would%20fix%20first%3A%20%0D%0A%0D%0AON%20THE%20DAY%0D%0AThe%20evening%20after%20Ignite%3A%20%0D%0ABest%20time%20to%20catch%20me%20at%20the%20stand%3A%20%0D%0ABest%20number%20to%20reach%20me%3A%20%0D%0A%0D%0AThanks%2C%0D%0A">
       Tell us you are coming
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <p class="fine r">Let us know and we will make sure somebody is free the moment you arrive,
-      with your invitation for the evening ready.</p>
+    <p class="fine r">Your email opens with a short form already in it: who you are, your sites,
+      and what you want to see. The more you tell us, the more of the visit we build around
+      you, and somebody will be free the moment you arrive.</p>
     <div class="sign r">
       <div><span class="tag">Dan Towler, Connect Ops</span><br>
         <a href="mailto:dan@connectyourworkforce.co.uk">dan@connectyourworkforce.co.uk</a></div>
@@ -1354,6 +1390,37 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
     el.textContent="0"+suf; requestAnimationFrame(f);
   });},{threshold:.6});
   document.querySelectorAll("[data-count]").forEach(function(el){to.observe(el);});
+
+  /* Build your visit: what they pick goes straight into the email they send */
+  var rsvp=document.getElementById("rsvp"),plan=document.querySelector("[data-plan]");
+  if(rsvp&&plan){
+    var mail=function(show,evening){return ["Hi Dan,","","I'd like to see Connect Ops at Ignite on 12 October, in DSP Land.","",
+      "ABOUT US","Name: ","Role: ","DSP name: ","Stations and sites: ","Routes a day, roughly: ",
+      "Contracts (Amazon, and any others): ","",
+      "WHAT TO SHOW ME","First: "+show,"What we run on today: ","The one thing I would fix first: ","",
+      "ON THE DAY","The evening after Ignite: "+evening,"Best time to catch me at the stand: ",
+      "Best number to reach me: ","","Thanks,",""].join("\r\n");};
+    var picked=function(k){return [].slice.call(plan.querySelectorAll('.vpick[data-k="'+k+'"][aria-pressed="true"]'))
+      .map(function(b){return b.getAttribute("data-v");});};
+    var write=function(){
+      var show=picked("show"),eve=picked("evening")[0]||"";
+      rsvp.href="mailto:dan@connectyourworkforce.co.uk?subject="+encodeURIComponent("Ignite: see you in DSP Land")+
+        "&body="+encodeURIComponent(mail(show.join(", "),eve));
+    };
+    plan.addEventListener("click",function(e){
+      var b=e.target.closest(".vpick"); if(!b)return;
+      var on=b.getAttribute("aria-pressed")!=="true", g=b.parentNode;
+      if(g.hasAttribute("data-one"))g.querySelectorAll(".vpick").forEach(function(x){x.setAttribute("aria-pressed","false");});
+      /* "All of it" and single pillars are either/or */
+      if(b.getAttribute("data-k")==="show"&&on){
+        var all=b.getAttribute("data-v").indexOf("All")===0;
+        g.querySelectorAll(".vpick").forEach(function(x){
+          if(x!==b&&(all||x.getAttribute("data-v").indexOf("All")===0))x.setAttribute("aria-pressed","false");});
+      }
+      b.setAttribute("aria-pressed",on?"true":"false");
+      write();
+    });
+  }
 
   /* the pillar index marks where you are */
   var links={};
