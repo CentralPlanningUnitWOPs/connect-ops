@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#003020">
-<title>Connect Ops &middot; Ignite, 12 October 2026</title>
+<title>Connect Ops &middot; Ignite, 12&ndash;13 October 2026</title>
 <meta name="description" content="Your whole business. One system. Powered by Connect. Five pillars for Amazon DSPs, live at Ignite in DSP Land.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Connect Ops at Ignite: your whole business, one system">
-<meta property="og:description" content="Fleet, People, Compliance, Payments and Performance, built inside a DSP. Come and find us in DSP Land, 12 October 2026.">
+<meta property="og:description" content="Fleet, People, Compliance, Payments and Performance, built inside a DSP. Come and find us in DSP Land, 12 to 13 October 2026.">
 <meta property="og:image" content="https://centralplanningunitwops.github.io/connect-ops/ignite-preview-102eb653/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -70,6 +70,21 @@ strong{font-weight:700;color:var(--ink)}
   .split h2{font-size:clamp(34px,4.5vw,60px);letter-spacing:-.04em;line-height:1}
 }
 @media(max-width:719px){br.db{display:none}}
+
+/* ══ the group strip ══════════════════════════════════════════════════ */
+.trust{background:#fff;border-block:1px solid var(--line)}
+.trow{display:grid;grid-template-columns:minmax(0,1fr)}
+.tcell{padding-block:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;justify-content:center}
+.tcell+.tcell{border-top:1px solid var(--line)}
+@media(min-width:760px){
+  .trow{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr)}
+  .tcell+.tcell{border-top:0;border-left:1px solid var(--line);padding-left:clamp(20px,3vw,44px)}
+}
+.tgrp b{font-family:var(--display);font-weight:500;font-size:clamp(26px,2.8vw,36px);line-height:1.05;
+  letter-spacing:.01em;text-transform:uppercase;margin-top:.3rem}
+.tfig b{font-family:var(--display);font-weight:500;font-size:clamp(34px,4vw,50px);line-height:1;
+  font-variant-numeric:tabular-nums}
+.tfig span{margin-top:.4rem;font-size:14px;line-height:1.4;color:var(--muted);font-weight:600}
 
 /* ══ 1 · the door ═════════════════════════════════════════════════════ */
 .hero{background:linear-gradient(168deg,#d4f6e5 0%,var(--wash) 44%,var(--paper) 100%);overflow:hidden}
@@ -263,6 +278,7 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
    guided-tour tooltips are not clipped at the frame edge. */
 .slot:not([data-embed=""]) .frame{aspect-ratio:var(--ar,1707/981)}
 .lead{max-width:62ch}
+.legal{font-size:13px!important;line-height:1.5!important;font-style:italic;color:#4f6b5e}
 .indemo{margin-top:1.1rem!important;padding:.85rem 1rem;border-radius:12px;background:#fff;border:1px solid var(--line);
   font-size:15px!important;line-height:1.5!important;color:#3b5a4c!important}
 .indemo b{display:inline-block;margin-right:.45rem;font-family:var(--display);font-weight:500;font-size:.66rem;
@@ -278,6 +294,8 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
 .max:hover{background:rgba(0,30,20,.94);border-color:var(--vivid)}
 .max:focus-visible{outline:2px solid var(--vivid);outline-offset:3px}
 .slot[data-embed=""] .max{display:none}
+.dnote{margin:.55rem 2px 0;font-size:12.5px;line-height:1.4;font-style:italic;color:#5b7a6c;text-align:right}
+@media(max-width:719px){.dnote{text-align:left}}
 @media(max-width:719px){
   .slot:not([data-embed=""]) .frame{aspect-ratio:1/1}
   .max{position:static;width:100%;margin-top:.55rem;padding:.8rem;border-radius:9px;min-height:46px;
@@ -655,6 +673,7 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
 .sign{margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.16);
   display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-end}
 .sign a{color:var(--vivid);text-decoration:none;border-bottom:1px solid rgba(16,192,112,.45)}
+.who2{display:flex;flex-wrap:wrap;gap:1.1rem clamp(1.6rem,4vw,3.2rem)}
 footer{background:var(--night);color:#8fc4ab;padding-block:1.5rem}
 footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
   font-family:var(--display);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase}
@@ -687,7 +706,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
 <section class="hero pad">
   <div class="wrap">
     <img class="mark r" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDI4LjEyIDM3NSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzFkYzA3OTsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIgewogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICMwYjNkMjg7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtODQwLjAzLDY2LjQ0Yy03MC45NSwwLTEyMS4wNiw0Ni4xNy0xMjEuMDYsMTEzLjc0djE4NS44MWg2MC44di0xODQuNjhjMC0zNi4wNCwyNS4zNC02MS4zNyw2MC44Mi02MS4zN3M2MC4yNSwyNS4zNCw2MC4yNSw2MS4zN3YxODQuNjhoNjAuODF2LTE4My41NmMwLTY5LjI1LTUwLjY4LTExNS45OS0xMjEuNjItMTE1Ljk5WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xMTM2Ljc4LDY2LjQ0Yy03MC45NSwwLTEyMS4wNiw0Ni4xNy0xMjEuMDYsMTEzLjc0djE4NS44MWg2MC44MnYtMTg0LjY4YzAtMzYuMDQsMjUuMzMtNjEuMzcsNjAuOC02MS4zN3M2MC4yNSwyNS4zNCw2MC4yNSw2MS4zN3YxODQuNjhoNjAuODJ2LTE4My41NmMwLTY5LjI1LTUwLjY4LTExNS45OS0xMjEuNjItMTE1Ljk5WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xNDQ4LjczLDY2LjQ0Yy04OC45NywwLTE1My43MSw2NC43NS0xNTMuNzEsMTU0LjI4czY0Ljc1LDE1NC4yOCwxNTQuODQsMTU0LjI4YzQ5LjU1LDAsOTAuMDktMTkuMTUsMTE4LjgtNTcuNDNsLTM1LjQ3LTM2LjZjLTIwLjgzLDI2LjQ2LTQ2LjczLDM5LjQxLTgyLjc3LDM5LjQxLTQ5LjU1LDAtODMuODktMjkuODQtOTEuNzgtNzcuN2gyMzEuNDJjMS4xMy01LjYzLDEuNjktMTUuMiwxLjY5LTIxLjk2LDAtODguOTYtNTgtMTU0LjI4LTE0My4wMi0xNTQuMjhabS05MC4wOSwxMzIuMzJjNy44OS00Ny44Niw0MS4xMS03OC44Myw4OC45Ny03OC44M3M3OS4zOSwzMi42Niw4My44OSw3OC44M2gtMTcyLjg2WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0yMDI4LjEyLDEyOC40di01Mi45NWgtODQuNFYwaC02MC44OHY3NS40NWgtMTA4LjA2Yy00MC4xMywwLTc2LjQ3LDE2LjI3LTEwMi43Nyw0Mi41MS0yNi4yNCwyNi4zLTQyLjUxLDYyLjY0LTQyLjUxLDEwMi43OCwwLDgwLjIsNjUuMDEsMTQ1LjI4LDE0NS4yOCwxNDUuMjhsNjIuNTEtNTMuNDloLTU1LjUyYy0yNS40MiwwLTQ4LjQtMTAuMy02NS4wMS0yNi45OC0xNi42OC0xNi42OC0yNi45OC0zOS42Ni0yNi45OC02NS4wOCwwLTUwLjg1LDQxLjIyLTkyLjA2LDkyLTkyLjA2aDEwMS4wOHYxMzYuODFjMCw2OS4yMiwzOC4zLDEwNS44MywxMDYuNDQsMTA1LjgzLDEyLjQxLDAsMjMuNjYtMS42OSwzMS41Mi01LjAydi01My40OWMtNi43MSwyLjc4LTE0LjAzLDMuOTMtMjEuOTcsMy45My0zNC4zLDAtNTUuMTItMTguMDMtNTUuMTItNTYuODh2LTEzMS4xOGg4NC40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im01NTkuNzUsMTY2LjQzbDMzLjczLDMzLjcxdi04NS45N2MtNjMuNjUtNjMuNjUtMTY2Ljg1LTYzLjY1LTIzMC41LDBsLTc2LjY2LDc2LjY2djg1Ljk4bDExMC40LTExMC4zNmM0NS4wMi00NS4wMSwxMTgtNDUuMDIsMTYzLjAzLS4wMVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzk1Ljk4LDI3NWwtMzMuNzMtMzMuNzF2ODUuOTZjNjMuNjUsNjMuNjUsMTY2Ljg1LDYzLjY1LDIzMC41LDBsNzYuNjYtNzYuNjZ2LTg1Ljk3bC0xMTAuNCwxMTAuMzZjLTQ1LjAyLDQ1LjAxLTExOCw0NS4wMS0xNjMuMDMsMFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNjEuOTQsMTgyLjcyYzAtNzEuMDYsNTcuNi0xMjguNjYsMTI4LjY2LTEyOC42Nmg2MC41M1YwaC02OC4xM0M4MS45MywwLDAsODEuOTMsMCwxODIuOTlzODEuOTMsMTgyLjk5LDE4Mi45OSwxODIuOTloMTkuMTVjMjEuMzMtMjEuMzMsMzMuMjgtMzMuMjksNTQuNjEtNTQuNjFoLTY2LjE2Yy03MS4wNiwwLTEyOC42Ni01Ny42LTEyOC42Ni0xMjguNjZaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=" alt="Connect" width="195" height="36">
-    <div class="r" style="margin-top:1.9rem"><span class="tag">Ignite &middot; 12 October 2026</span></div>
+    <div class="r" style="margin-top:1.9rem"><span class="tag">Ignite &middot; 12&ndash;13 October 2026</span></div>
     <h1 class="r" style="margin-top:.75rem">Your whole business. <br class="db">One system. <br class="db"><span class="pw">Powered by Connect.</span></h1>
     <div class="sub r" style="max-width:38rem">
       Connect Ops is one system for people, fleet, compliance, pay and performance.
@@ -710,6 +729,15 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
   <svg class="routes" viewBox="0 0 800 560" aria-hidden="true" focusable="false"><defs><filter id="hglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="hshadow" x="-60%" y="-60%" width="220%" height="240%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#003020" flood-opacity=".28"/></filter></defs><g class="rd"><path d="M0 470 C200 450 390 330 530 280"/><path d="M60 40 C270 90 430 220 530 280"/><path d="M610 -20 C600 90 550 190 530 280"/><path d="M840 40 C750 110 650 220 530 280"/><path d="M840 300 C750 300 660 290 530 280"/><path d="M830 570 C730 480 630 340 530 280"/><path d="M520 600 C530 480 530 380 530 280"/><path d="M250 600 C370 480 450 360 530 280"/></g><g class="ln"><path d="M0 470 C200 450 390 330 530 280"/><path d="M60 40 C270 90 430 220 530 280"/><path d="M610 -20 C600 90 550 190 530 280"/><path d="M840 40 C750 110 650 220 530 280"/><path d="M840 300 C750 300 660 290 530 280"/><path d="M830 570 C730 480 630 340 530 280"/><path d="M520 600 C530 480 530 380 530 280"/><path d="M250 600 C370 480 450 360 530 280"/></g><g class="bm"><path pathLength="100" style="animation-duration:6.5s;animation-delay:0s" d="M0 470 C200 450 390 330 530 280"/><path pathLength="100" style="animation-duration:7.5s;animation-delay:-2.1s" d="M60 40 C270 90 430 220 530 280"/><path pathLength="100" style="animation-duration:5.8s;animation-delay:-4.3s" d="M610 -20 C600 90 550 190 530 280"/><path pathLength="100" style="animation-duration:7s;animation-delay:-1.2s" d="M840 40 C750 110 650 220 530 280"/><path pathLength="100" style="animation-duration:6.2s;animation-delay:-3.4s" d="M840 300 C750 300 660 290 530 280"/><path pathLength="100" style="animation-duration:8s;animation-delay:-5.1s" d="M830 570 C730 480 630 340 530 280"/><path pathLength="100" style="animation-duration:6.8s;animation-delay:-0.6s" d="M520 600 C530 480 530 380 530 280"/><path pathLength="100" style="animation-duration:7.4s;animation-delay:-2.8s" d="M250 600 C370 480 450 360 530 280"/></g><g class="st"><circle cx="176" cy="430" r="6" style="animation-delay:0.0s"/><circle cx="351" cy="358" r="5" style="animation-delay:0.0s"/><circle cx="277" cy="123" r="6" style="animation-delay:0.7s"/><circle cx="592" cy="76" r="6" style="animation-delay:1.4s"/><circle cx="562" cy="173" r="5" style="animation-delay:1.4s"/><circle cx="733" cy="132" r="6" style="animation-delay:2.1s"/><circle cx="758" cy="298" r="6" style="animation-delay:2.8s"/><circle cx="663" cy="291" r="5" style="animation-delay:2.8s"/><circle cx="716" cy="453" r="6" style="animation-delay:3.5s"/><circle cx="527" cy="497" r="6" style="animation-delay:0.2s"/><circle cx="529" cy="395" r="5" style="animation-delay:0.2s"/><circle cx="372" cy="465" r="6" style="animation-delay:0.9s"/></g><g class="van"><rect x="-9" y="-5.5" width="18" height="11" rx="3.5"/><animateMotion dur="9s" begin="0.0s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M0 470 C200 450 390 330 530 280"/></g><g class="van"><rect x="-9" y="-5.5" width="18" height="11" rx="3.5"/><animateMotion dur="11s" begin="-2.3s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M840 40 C750 110 650 220 530 280"/></g><g class="van"><rect x="-9" y="-5.5" width="18" height="11" rx="3.5"/><animateMotion dur="10s" begin="-4.6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M830 570 C730 480 630 340 530 280"/></g><g class="van"><rect x="-9" y="-5.5" width="18" height="11" rx="3.5"/><animateMotion dur="8.5s" begin="-6.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M520 600 C530 480 530 380 530 280"/></g><circle class="ring" cx="530" cy="280" r="46"/><circle class="ring r2" cx="530" cy="280" r="46"/><rect class="hubtile" x="484" y="234" width="92" height="92" rx="26"/><image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NzIgMzc2Ij48cGF0aCBmaWxsPSIjMGIzZDI4IiBkPSJtNTU5Ljc1LDE2Ni40M2wzMy43MywzMy43MXYtODUuOTdjLTYzLjY1LTYzLjY1LTE2Ni44NS02My42NS0yMzAuNSwwbC03Ni42Niw3Ni42NnY4NS45OGwxMTAuNC0xMTAuMzZjNDUuMDItNDUuMDEsMTE4LTQ1LjAyLDE2My4wMy0uMDFaIi8+PHBhdGggZmlsbD0iIzFkYzA3OSIgZD0ibTM5NS45OCwyNzVsLTMzLjczLTMzLjcxdjg1Ljk2YzYzLjY1LDYzLjY1LDE2Ni44NSw2My42NSwyMzAuNSwwbDc2LjY2LTc2LjY2di04NS45N2wtMTEwLjQsMTEwLjM2Yy00NS4wMiw0NS4wMS0xMTgsNDUuMDEtMTYzLjAzLDBaIi8+PHBhdGggZmlsbD0iIzBiM2QyOCIgZD0ibTYxLjk0LDE4Mi43MmMwLTcxLjA2LDU3LjYtMTI4LjY2LDEyOC42Ni0xMjguNjZoNjAuNTNWMGgtNjguMTNDODEuOTMsMCwwLDgxLjkzLDAsMTgyLjk5czgxLjkzLDE4Mi45OSwxODIuOTksMTgyLjk5aDE5LjE1YzIxLjMzLTIxLjMzLDMzLjI4LTMzLjI5LDU0LjYxLTU0LjYxaC02Ni4xNmMtNzEuMDYsMC0xMjguNjYtNTcuNi0xMjguNjYtMTI4LjY2WiIvPjwvc3ZnPgo=" x="498" y="262" width="64" height="36"/></svg>
 </section>
 
+<!-- ══ the group behind it (Dan, 27 Sep: true, and says we are not a small set up) -->
+<section class="trust" aria-label="Part of the Generate Group">
+  <div class="wrap trow">
+    <div class="tcell tgrp r"><span class="tag">Part of the</span><b>Generate Group</b></div>
+    <div class="tcell tfig r"><b data-count="250" data-prefix="&pound;" data-suffix="m+">&pound;250m+</b><span>group turnover</span></div>
+    <div class="tcell tfig r"><b data-count="43000" data-suffix="+">43,000+</b><span>unique contractors over the last 12 months</span></div>
+  </div>
+</section>
+
 <!-- ══ 2 · the pillars holding up the business ════════════════════════ -->
 <section class="paperbg pad" aria-labelledby="t-pillars">
   <div class="wrap">
@@ -719,9 +747,10 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
         <div class="sub">Strength and stability under everything you run.</div>
       </div>
       <p class="lede r" style="color:var(--muted);margin:0">
-        Connect Ops was not written for DSPs by a software company. It was written inside a
-        DSP by the people running it, because nothing on the market did the job. Each pillar
-        carries its own weight, and all five stand on the same record.
+        Connect Ops started as a problem inside Warrior Logistics. Nothing we tried could carry
+        Warrior's scale, so an ex Amazon On Road manager who had launched multiple DSP contracts
+        for Warrior built the system that could. It was made with intent, for a large scale,
+        multi contract DSP, and it is built for growth.
       </p>
     </div>
 
@@ -736,7 +765,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
         <a class="col" href="#p-fleet"><span class="cap"></span><span class="shaft">
           <span class="pn" aria-hidden="true">01</span>
           <span class="pname"><small>Connect</small> Fleet</span><span class="rule"></span>
-          <span class="pdesc">Vans, hire evidence, off road cases and damage, on every contract.</span>
+          <span class="pdesc">Vans, hire evidence, off road cases and damage, on every contract. See the cost of a van off the road while it is still running up.</span>
           <span class="go">See the demo</span></span><span class="base"></span></a>
         <a class="col" href="#p-people"><span class="cap"></span><span class="shaft">
           <span class="pn" aria-hidden="true">02</span>
@@ -833,6 +862,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <div class="frame r"><div class="ph"><div class="play"></div>
             <div class="what">Fleet operations and vehicle maintenance, from the fleet dashboard to a new van registered</div>
             <div class="pend">Interactive demo</div></div></div><button class="max" type="button" aria-label="Maximise this demo">Maximise</button>
+          <p class="dnote">Demo data only. Nothing shown is real.</p>
         </div>
       </figure>
       <div class="inside r">
@@ -871,6 +901,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <div class="frame r"><div class="ph"><div class="play"></div>
             <div class="what">A candidate from application through to appearing on the rota, on one record</div>
             <div class="pend">Supademo, to be recorded</div></div></div><button class="max" type="button" aria-label="Maximise this demo">Maximise</button>
+          <p class="dnote">Demo data only. Nothing shown is real.</p>
         </div>
       </figure>
       <div class="inside r">
@@ -902,12 +933,14 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <span class="kick">Compliance that proves itself</span>
           <h3>The gate holds until every check is green</h3>
           <p>Right to work, licence, DVLA, background check, contract. Every one confirmed by a manager, dated and attributable. Licences are checked again on a cycle, by rule.</p>
-          <p>The gate holds until all of it is green, and then the driver appears on the rota by themselves. When an audit lands, every record is already dated and signed.</p>
+          <p>A driver cannot land on the rota until every compliance gate is green. Connect Ops keeps you audit ready, every record signed and dated. CAS audits, with ease.</p>
+          <p class="legal">Connect supports the employer's Right to Work process and record-keeping responsibilities; responsibility for completing the prescribed check and making the employment decision remains with the employer.</p>
         </div>
         <div class="stage">
           <div class="frame r"><div class="ph"><div class="play"></div>
             <div class="what">The compliance gate holding a driver off the rota, and releasing them when the last check turns green</div>
             <div class="pend">Supademo, to be recorded</div></div></div><button class="max" type="button" aria-label="Maximise this demo">Maximise</button>
+          <p class="dnote">Demo data only. Nothing shown is real.</p>
         </div>
       </figure>
       <div class="inside r">
@@ -946,14 +979,14 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
         <div class="lead r">
           <span class="kick">Built for how you pay</span>
           <h3>Clarity and control over subcontractor pay</h3>
-          <p>It is not off the shelf. It was designed for businesses that run on subcontractors, and handles the volume, the complexity and the real world of weekly pay with accuracy you can see.</p>
           <p>Your P&amp;L sits behind one login. Parcels at your own rate, the scorecard tier you actually hit, extra routes, every cost line down to itemised leakage, and what is left.</p>
-          <p>Connect facilitates self billing invoicing and accountancy for your drivers. You confirm the week's rota is right, and pay is generated from it line by line.</p>
+          <p>Connect handles self billing invoicing and accountancy for your drivers. You confirm the week's rota is right, and pay is generated from it line by line.</p>
         </div>
         <div class="stage">
           <div class="frame r"><div class="ph"><div class="play"></div>
             <div class="what">A week's P&amp;L built from the rota that actually ran, then the invoices raised from it</div>
             <div class="pend">Supademo, to be recorded</div></div></div><button class="max" type="button" aria-label="Maximise this demo">Maximise</button>
+          <p class="dnote">Demo data only. Nothing shown is real.</p>
         </div>
       </figure>
       <div class="inside r">
@@ -961,7 +994,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
         <p class="note">From the invoice to the payment, every line accounted for.</p>
         <ul class="feat">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg><b>Real time ledger</b><span>Every addition and deduction lands on the driver's week as a typed line, and the deductions ledger runs week by week.</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><b>Deductions that work</b><span>Speeding and parking fines, van damage, missed shifts. Each one typed, with damage recovered on a payment plan.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><b>Deductions that work</b><span>Speeding and parking fines and van damage, each one typed, with damage recovered on a payment plan.</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg><b>Full VAT transparency</b><span>VAT only when the driver is VAT registered with a number on file, shown on the invoice and frozen when it is issued.</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>Audit ready at any time</b><span>Every invoice and adjustment is already dated and signed, so the trail exists before anyone asks for it.</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><b>Fully integrated</b><span>Invoicing, pay and compliance share one record, so the invoice comes from the same driver the rota and the checks already know.</span></li>
@@ -986,7 +1019,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
       <div class="wrap">
         <span class="pnum" aria-hidden="true">05</span>
         <h3 class="ptitle" id="h-performance">Connect Performance</h3>
-        <p class="psub">Who needs a conversation first, and why.</p>
+        <p class="psub">Every metric, every driver, every week.</p>
       </div>
     </header>
     <div class="wrap pbody">
@@ -1001,21 +1034,21 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
       <figure class="slot" data-embed="https://app.supademo.com/embed/cmuftb4wc01wlqm3k75qkgmqd?embed_v=2&amp;utm_source=embed" style="--ar:3780/2153">
         <div class="lead r">
           <span class="kick">Scorecard coaching</span>
-          <h3>A ranked roster, and the conversation already written</h3>
-          <p>The week's scorecards become a ranked roster: who needs a conversation first, and exactly why. It finds the drivers sliding against their own form, not only the ones at the bottom.</p>
-          <p>Then it writes the conversation. Every driver gets their own note about their own week, and a person reads it before anything sends. This pillar was designed by a former Amazon On Road manager.</p>
-          <p class="indemo"><b>In this demo</b> Amazon's weekly scorecard turned into a ranked coaching plan, the coaching card each driver takes away, and a scoring model you set yourself. Click through it, or press Maximise for the full screen.</p>
+          <h3>Automated scorecard analysis, metric by metric</h3>
+          <p>The weekly scorecard, analysed automatically, with the data behind every metric. Weekly coaching cards go out to your drivers, each one read by a person before it sends.</p>
+          <p class="indemo"><b>In this demo</b> The weekly scorecard analysed, the coaching card each driver takes away, and a scoring model you set yourself. Click through it, or press Maximise for the full screen.</p>
         </div>
         <div class="stage">
           <div class="frame r"><div class="ph"><div class="play"></div>
             <div class="what">From Amazon's weekly scorecard to a coaching card in every driver's hand</div>
             <div class="pend">Interactive demo</div></div></div><button class="max" type="button" aria-label="Maximise this demo">Maximise</button>
+          <p class="dnote">Demo data only. Nothing shown is real.</p>
         </div>
       </figure>
       <div class="inside r">
         <h4>What sits behind <span>Connect Performance</span></h4>
         <div class="spec"><table>
-          <tr><th scope="row">Coaching roster</th><td>The week's scorecards as a ranked roster, with the reason against each name.</td></tr>
+          <tr><th scope="row">Scorecard analysis</th><td>The week's scorecard broken down metric by metric, with the data behind each one.</td></tr>
           <tr><th scope="row">Weekly coaching note</th><td>Every driver gets their own, positives first, and nothing sends unreviewed.</td></tr>
           <tr><th scope="row">Safety and driving scores</th><td>Daily upload, per driver history, every event against a name.</td></tr>
           <tr><th scope="row">Day of ops</th><td>The floor as it stands right now, not as it was planned.</td></tr>
@@ -1265,20 +1298,13 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
 <!-- ══ 9 · the ask ═══════════════════════════════════════════════════ -->
 <section class="dark pad" aria-labelledby="t-ask">
   <div class="wrap" style="max-width:1040px">
-    <span class="tag r">Ignite &middot; 12 October 2026</span>
+    <span class="tag r">Ignite &middot; 12&ndash;13 October 2026</span>
     <h2 class="r ask" id="t-ask" style="margin-top:.8rem">Come and find us <br class="db">in DSP Land.</h2>
-    <p class="lede r" style="margin-top:1.4rem;max-width:40rem;color:#dff3e8">
-      Every visit is built around you. Tell us which parts of your operation matter most, and
-      that is the demo you get: the five pillars on a proper screen, the whole system end to
-      end, and the founding member terms in full.
-    </p>
     <div class="tickets">
       <div class="ticket hot r">
         <span class="k">At Ignite</span>
         <h3>The Connect stand</h3>
-        <p>No appointment needed. Come and find us on the day and we will take you through it,
-          your way.</p>
-        <div class="meta"><div><span>When</span><b>12 October 2026</b></div>
+        <div class="meta"><div><span>When</span><b>12&ndash;13 October</b></div>
           <div><span>Where</span><b>DSP Land</b></div></div>
       </div>
       <div class="ticket r">
@@ -1309,14 +1335,18 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
           <button type="button" class="vpick" aria-pressed="false" data-k="evening" data-v="Just the stand">Just the stand</button>
         </div></div>
     </div>
-    <a class="cta r" id="rsvp" href="mailto:dan@connectyourworkforce.co.uk?subject=Ignite%3A%20see%20you%20in%20DSP%20Land&amp;body=Hi%20Dan%2C%0D%0A%0D%0AWe%27d%20like%20to%20come%20and%20see%20you%20at%20Ignite.%0D%0A%0D%0AName%20and%20DSP%3A%20%0D%0AKeen%20to%20see%3A%20%0D%0AThe%20evening%20after%20Ignite%3A%20%0D%0ABest%20way%20to%20reach%20me%3A%20%0D%0A%0D%0AWhat%27s%20on%20your%20mind%3A%20%0D%0A%0D%0AThanks%2C%0D%0A">
+    <a class="cta r" id="rsvp" href="mailto:dan@connectyourworkforce.com?subject=Ignite%3A%20see%20you%20in%20DSP%20Land&amp;body=Hi%20Dan%2C%0D%0A%0D%0AWe%27d%20like%20to%20come%20and%20see%20you%20at%20Ignite.%0D%0A%0D%0AName%20and%20DSP%3A%20%0D%0AKeen%20to%20see%3A%20%0D%0AThe%20evening%20after%20Ignite%3A%20%0D%0ABest%20way%20to%20reach%20me%3A%20%0D%0A%0D%0AWhat%27s%20on%20your%20mind%3A%20%0D%0A%0D%0AThanks%2C%0D%0A">
       Tell us you are coming
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <p class="fine r">Your email opens with a few lines to start us off. Say as much or as little
       as you like, and we will pick it up from there.</p>
     <div class="sign r">
-      <div><span class="tag">Dan Towler, Connect Ops</span><br>
-        <a href="mailto:dan@connectyourworkforce.co.uk">dan@connectyourworkforce.co.uk</a></div>
+      <div class="who2">
+        <div><span class="tag">Dan Towler, Connect Ops</span><br>
+          <a href="mailto:dan@connectyourworkforce.com">dan@connectyourworkforce.com</a></div>
+        <div><span class="tag">Shaun Weeks, Connect Ops</span><br>
+          <a href="mailto:shaun@connectyourworkforce.com">shaun@connectyourworkforce.com</a></div>
+      </div>
       <img class="mark" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDI4LjEyIDM3NSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im04NDAuMDMsNjYuNDRjLTcwLjk1LDAtMTIxLjA2LDQ2LjE3LTEyMS4wNiwxMTMuNzR2MTg1LjgxaDYwLjh2LTE4NC42OGMwLTM2LjA0LDI1LjM0LTYxLjM3LDYwLjgyLTYxLjM3czYwLjI1LDI1LjM0LDYwLjI1LDYxLjM3djE4NC42OGg2MC44MXYtMTgzLjU2YzAtNjkuMjUtNTAuNjgtMTE1Ljk5LTEyMS42Mi0xMTUuOTlaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTExMzYuNzgsNjYuNDRjLTcwLjk1LDAtMTIxLjA2LDQ2LjE3LTEyMS4wNiwxMTMuNzR2MTg1LjgxaDYwLjgydi0xODQuNjhjMC0zNi4wNCwyNS4zMy02MS4zNyw2MC44LTYxLjM3czYwLjI1LDI1LjM0LDYwLjI1LDYxLjM3djE4NC42OGg2MC44MnYtMTgzLjU2YzAtNjkuMjUtNTAuNjgtMTE1Ljk5LTEyMS42Mi0xMTUuOTlaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTE0NDguNzMsNjYuNDRjLTg4Ljk3LDAtMTUzLjcxLDY0Ljc1LTE1My43MSwxNTQuMjhzNjQuNzUsMTU0LjI4LDE1NC44NCwxNTQuMjhjNDkuNTUsMCw5MC4wOS0xOS4xNSwxMTguOC01Ny40M2wtMzUuNDctMzYuNmMtMjAuODMsMjYuNDYtNDYuNzMsMzkuNDEtODIuNzcsMzkuNDEtNDkuNTUsMC04My44OS0yOS44NC05MS43OC03Ny43aDIzMS40MmMxLjEzLTUuNjMsMS42OS0xNS4yLDEuNjktMjEuOTYsMC04OC45Ni01OC0xNTQuMjgtMTQzLjAyLTE1NC4yOFptLTkwLjA5LDEzMi4zMmM3Ljg5LTQ3Ljg2LDQxLjExLTc4LjgzLDg4Ljk3LTc4Ljgzczc5LjM5LDMyLjY2LDgzLjg5LDc4LjgzaC0xNzIuODZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTIwMjguMTIsMTI4LjR2LTUyLjk1aC04NC40VjBoLTYwLjg4djc1LjQ1aC0xMDguMDZjLTQwLjEzLDAtNzYuNDcsMTYuMjctMTAyLjc3LDQyLjUxLTI2LjI0LDI2LjMtNDIuNTEsNjIuNjQtNDIuNTEsMTAyLjc4LDAsODAuMiw2NS4wMSwxNDUuMjgsMTQ1LjI4LDE0NS4yOGw2Mi41MS01My40OWgtNTUuNTJjLTI1LjQyLDAtNDguNC0xMC4zLTY1LjAxLTI2Ljk4LTE2LjY4LTE2LjY4LTI2Ljk4LTM5LjY2LTI2Ljk4LTY1LjA4LDAtNTAuODUsNDEuMjItOTIuMDYsOTItOTIuMDZoMTAxLjA4djEzNi44MWMwLDY5LjIyLDM4LjMsMTA1LjgzLDEwNi40NCwxMDUuODMsMTIuNDEsMCwyMy42Ni0xLjY5LDMxLjUyLTUuMDJ2LTUzLjQ5Yy02LjcxLDIuNzgtMTQuMDMsMy45My0yMS45NywzLjkzLTM0LjMsMC01NS4xMi0xOC4wMy01NS4xMi01Ni44OHYtMTMxLjE4aDg0LjRaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTU1OS43NSwxNjYuNDNsMzMuNzMsMzMuNzF2LTg1Ljk3Yy02My42NS02My42NS0xNjYuODUtNjMuNjUtMjMwLjUsMGwtNzYuNjYsNzYuNjZ2ODUuOThsMTEwLjQtMTEwLjM2YzQ1LjAyLTQ1LjAxLDExOC00NS4wMiwxNjMuMDMtLjAxWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0zOTUuOTgsMjc1bC0zMy43My0zMy43MXY4NS45NmM2My42NSw2My42NSwxNjYuODUsNjMuNjUsMjMwLjUsMGw3Ni42Ni03Ni42NnYtODUuOTdsLTExMC40LDExMC4zNmMtNDUuMDIsNDUuMDEtMTE4LDQ1LjAxLTE2My4wMywwWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im02MS45NCwxODIuNzJjMC03MS4wNiw1Ny42LTEyOC42NiwxMjguNjYtMTI4LjY2aDYwLjUzVjBoLTY4LjEzQzgxLjkzLDAsMCw4MS45MywwLDE4Mi45OXM4MS45MywxODIuOTksMTgyLjk5LDE4Mi45OWgxOS4xNWMyMS4zMy0yMS4zMywzMy4yOC0zMy4yOSw1NC42MS01NC42MWgtNjYuMTZjLTcxLjA2LDAtMTI4LjY2LTU3LjYtMTI4LjY2LTEyOC42NloiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Connect" width="152" height="28" style="height:28px">
     </div>
   </div>
@@ -1388,11 +1418,11 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
      real figure is in the HTML, so nothing is lost without scripts. */
   var to=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting)return; to.unobserve(e.target);
-    var el=e.target,n=+el.getAttribute("data-count"),suf=el.getAttribute("data-suffix")||"",t0=0,D=1500;
+    var el=e.target,n=+el.getAttribute("data-count"),suf=el.getAttribute("data-suffix")||"",pre=el.getAttribute("data-prefix")||"",t0=0,D=1500;
     if(still||!n)return;
     function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/D),v=1-Math.pow(1-k,3);
-      el.textContent=Math.round(n*v)+suf; if(k<1)requestAnimationFrame(f);}
-    el.textContent="0"+suf; requestAnimationFrame(f);
+      el.textContent=pre+Math.round(n*v).toLocaleString("en-GB")+suf; if(k<1)requestAnimationFrame(f);}
+    el.textContent=pre+"0"+suf; requestAnimationFrame(f);
   });},{threshold:.6});
   document.querySelectorAll("[data-count]").forEach(function(el){to.observe(el);});
 
@@ -1406,7 +1436,7 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
       .map(function(b){return b.getAttribute("data-v");});};
     var write=function(){
       var show=picked("show"),eve=picked("evening")[0]||"";
-      rsvp.href="mailto:dan@connectyourworkforce.co.uk?subject="+encodeURIComponent("Ignite: see you in DSP Land")+
+      rsvp.href="mailto:dan@connectyourworkforce.com?subject="+encodeURIComponent("Ignite: see you in DSP Land")+
         "&body="+encodeURIComponent(mail(show.join(", "),eve));
     };
     plan.addEventListener("click",function(e){
