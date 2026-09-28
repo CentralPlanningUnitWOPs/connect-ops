@@ -238,10 +238,12 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
   background:rgba(255,255,255,.93);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);
   border:1px solid rgba(10,121,71,.22);box-shadow:0 20px 44px -28px rgba(0,48,32,.6)}
 .ptabs::-webkit-scrollbar{display:none}
-.ptabs button{position:relative;z-index:1;flex:0 0 auto;display:flex;align-items:baseline;gap:.5rem;
+.ptabs button{position:relative;z-index:1;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
   min-height:46px;padding:0 1.2rem;border:0;border-radius:999px;background:none;cursor:pointer;
   font:700 15.5px/1 var(--body);letter-spacing:-.01em;color:var(--ink);white-space:nowrap;
   transition:color .3s var(--ease)}
+/* the label sits in the middle of its pill; the number and the name share a baseline inside it */
+.ptabs .tl{display:inline-flex;align-items:baseline;gap:.5rem}
 .ptabs button b{font-family:var(--display);font-weight:500;font-size:.74rem;letter-spacing:.06em;
   color:var(--accent);transition:color .3s var(--ease)}
 .ptabs button[aria-selected="true"]{color:#fff}
@@ -252,7 +254,7 @@ a.pill:hover{background:#fff;border-color:var(--accent)}
 .ptabs .ind::after{content:"";position:absolute;left:22%;right:22%;bottom:-1px;height:2px;border-radius:2px;
   background:var(--vivid);box-shadow:0 0 10px var(--vivid)}
 html:not(.js) .ptabs-wrap{display:none}
-@media(max-width:559px){.ptabs button{padding:0 .85rem;font-size:14.5px;gap:.38rem}}
+@media(max-width:559px){.ptabs button{padding:0 .85rem;font-size:14.5px}.ptabs .tl{gap:.38rem}}
 /* on a phone the rail scrolls sideways; its open edge fades so you can tell */
 .ptabs[data-edge="start"]{-webkit-mask-image:linear-gradient(90deg,#000 84%,transparent);mask-image:linear-gradient(90deg,#000 84%,transparent)}
 .ptabs[data-edge="end"]{-webkit-mask-image:linear-gradient(270deg,#000 84%,transparent);mask-image:linear-gradient(270deg,#000 84%,transparent)}
@@ -885,11 +887,11 @@ footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;
     <div class="ptabs-wrap">
       <div class="ptabs" role="tablist" aria-label="The five pillars">
         <span class="ind" aria-hidden="true"></span>
-        <button type="button" role="tab" id="pt-fleet" aria-controls="p-fleet" aria-selected="true"><b>01</b>Fleet</button>
-        <button type="button" role="tab" id="pt-people" aria-controls="p-people" aria-selected="false" tabindex="-1"><b>02</b>People</button>
-        <button type="button" role="tab" id="pt-compliance" aria-controls="p-compliance" aria-selected="false" tabindex="-1"><b>03</b>Compliance</button>
-        <button type="button" role="tab" id="pt-payments" aria-controls="p-payments" aria-selected="false" tabindex="-1"><b>04</b>Payments</button>
-        <button type="button" role="tab" id="pt-performance" aria-controls="p-performance" aria-selected="false" tabindex="-1"><b>05</b>Performance</button>
+        <button type="button" role="tab" id="pt-fleet" aria-controls="p-fleet" aria-selected="true"><span class="tl"><b>01</b>Fleet</span></button>
+        <button type="button" role="tab" id="pt-people" aria-controls="p-people" aria-selected="false" tabindex="-1"><span class="tl"><b>02</b>People</span></button>
+        <button type="button" role="tab" id="pt-compliance" aria-controls="p-compliance" aria-selected="false" tabindex="-1"><span class="tl"><b>03</b>Compliance</span></button>
+        <button type="button" role="tab" id="pt-payments" aria-controls="p-payments" aria-selected="false" tabindex="-1"><span class="tl"><b>04</b>Payments</span></button>
+        <button type="button" role="tab" id="pt-performance" aria-controls="p-performance" aria-selected="false" tabindex="-1"><span class="tl"><b>05</b>Performance</span></button>
       </div>
     </div>
 
